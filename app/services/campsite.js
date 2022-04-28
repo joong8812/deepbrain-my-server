@@ -33,5 +33,17 @@ export default function CampsiteService() {
         }
       });
     },
+    deleteCampsite(req, res) {
+      const { id } = req.params;
+      Campsite.findByIdAndDelete(id, (err) => {
+        if (err) {
+          res.status(500).json({ message: err });
+          console.log("delete a campsite fail");
+          return;
+        } else {
+          res.status(200).json({ ok: "ok" });
+        }
+      });
+    },
   };
 }

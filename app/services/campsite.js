@@ -21,5 +21,17 @@ export default function CampsiteService() {
         res.status(200).json(campsites);
       });
     },
+    updateCampsite(req, res) {
+      const { id } = req.params;
+      Campsite.findByIdAndUpdate(id, { ...req.body.campsite }, (err) => {
+        if (err) {
+          res.status(500).json({ message: err });
+          console.log("update a campsite fail");
+          return;
+        } else {
+          res.status(200).json({ ok: "ok" });
+        }
+      });
+    },
   };
 }

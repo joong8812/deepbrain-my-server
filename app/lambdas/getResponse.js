@@ -26,7 +26,6 @@ const getResponse = () => {
       const data = {
         status: 0,
         message: msg,
-        data: data,
       };
       return res.status(404).json(data);
     },

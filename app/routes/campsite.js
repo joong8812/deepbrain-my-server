@@ -27,5 +27,8 @@ app.post('/', cors(corsOptions), (req, res) => {
 app.get('/', cors(corsOptions), (req, res) => {
   CampsiteService().getCampsites(req, res)
 })
+app.patch('/:id', cors(corsOptions), (req, res) => {
+  CampsiteService().updateCampsite(req, res)
+})
 
 export default app

@@ -41,12 +41,12 @@ const startServer = async () => {
     });
 
   app.all("*", (_req, res) => {
-    return getResponse.notFoundResponse(res, "Not Found Page!!!");
+    return getResponse().notFoundResponse(res, "Not Found Page!!!");
   });
 
   app.use((err, _req, res) => {
     if (err.name === "UnauthorizedError") {
-      return getResponse.unauthorizedResponse(res, err.message);
+      return getResponse().unauthorizedResponse(res, err.message);
     }
   });
 

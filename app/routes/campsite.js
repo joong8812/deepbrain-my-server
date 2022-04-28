@@ -21,6 +21,9 @@ app.use((_req, res, next) => {
   )
   next()
 })
+app.post('/', cors(corsOptions), (req, res) => {
+  CampsiteService().createCampsite(req, res)
+})
 app.get('/', cors(corsOptions), (req, res) => {
   CampsiteService().getCampsites(req, res)
 })

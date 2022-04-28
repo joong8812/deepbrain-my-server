@@ -26,7 +26,6 @@ export default function CampsiteService() {
     },
     getCampsite(req, res) {
       const { id } = req.params;
-      console.log("id", id);
       Campsite.findById(id).exec((err, campsite) => {
         if (err) {
           res.status(500).json({ message: err });

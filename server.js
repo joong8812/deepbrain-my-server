@@ -6,6 +6,7 @@ import morgan from "morgan";
 import db from "./app/models/index.js";
 
 import index from './app/routes/index.js'
+import campsites from './app/routes/campsite.js'
 
 import getResponse from "./app/lambdas/getResponse.js";
 import applyPassport from "./app/lambdas/applyPassport.js";
@@ -23,6 +24,7 @@ const startServer = async () => {
 
   app.use(_passport.initialize());
   app.use("/", index);
+  app.use("/campsites", campsites);
   app.use(morgan("dev"));
 
   db.mongoose

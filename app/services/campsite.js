@@ -24,9 +24,21 @@ export default function CampsiteService() {
           res.status(200).json(campsites);
         });
     },
+    getCampsite(req, res) {
+      const { id } = req.params;
+      console.log("id", id);
+      Campsite.findById(id).exec((err, campsite) => {
+        if (err) {
+          res.status(500).json({ message: err });
+          console.log("read a campsite fail");
+        } else {
+          res.status(200).json(campsite);
+        }
+      });
+    },
     updateCampsite(req, res) {
       const { id } = req.params;
-      Campsite.findByIdAndUpdate(id, { ...req.body.campsite }, (err) => {
+      Campsite.findByIdAndUpdate(id, { ...req.body }, (err) => {
         if (err) {
           res.status(500).json({ message: err });
           console.log("update a campsite fail");

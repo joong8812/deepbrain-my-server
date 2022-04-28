@@ -28,6 +28,9 @@ app
   });
 app
   .route("/:id")
+  .get(cors(corsOptions), (req, res) => {
+    CampsiteService().getCampsite(req, res);
+  })
   .patch(cors(corsOptions), (req, res) => {
     CampsiteService().updateCampsite(req, res);
   })

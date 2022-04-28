@@ -17,9 +17,12 @@ export default function CampsiteService() {
       });
     },
     getCampsites(req, res) {
-      Campsite.find().exec((err, campsites) => {
-        res.status(200).json(campsites);
-      });
+      Campsite.find()
+        .limit(10)
+        .sort([["_id", -1]])
+        .exec((err, campsites) => {
+          res.status(200).json(campsites);
+        });
     },
     updateCampsite(req, res) {
       const { id } = req.params;

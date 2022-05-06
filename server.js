@@ -8,6 +8,7 @@ import db from "./app/models/index.js";
 import index from "./app/routes/index.js";
 import api from "./app/routes/api.js";
 import campsites from "./app/routes/campsite.js";
+import users from "./app/routes/user.js";
 
 import getResponse from "./app/lambdas/getResponse.js";
 import applyPassport from "./app/lambdas/applyPassport.js";
@@ -26,6 +27,7 @@ const startServer = async () => {
   app.use(_passport.initialize());
   app.use("/", index);
   app.use("/api", api);
+  app.use("/users", users);
   app.use("/campsites", campsites);
   app.use(morgan("dev"));
 

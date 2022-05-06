@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 import applyDotenv from "../lambdas/applyDotenv.js";
+import dotenv from "dotenv";
 
 const { mongoUri } = applyDotenv(dotenv);
 

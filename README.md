@@ -14,9 +14,9 @@
 
 ## 3W
 ### make signup, login, logout api
-* `POST`, `/user/signup` - sign up
-* `POST`, `/user/login` - login
-* `GET`, `/user/logout` - logout
+* `POST`, `/users/signup` - sign up
+* `POST`, `/users/login` - login
+* `GET`, `/users/logout` - logout
 
 ## How to run this server
 1. Clone this project

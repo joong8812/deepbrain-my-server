@@ -19,15 +19,15 @@
 * `GET`, `/user/logout` - logout
 
 ## How to run this server
-1. clone this project
+1. Clone this project
 ```shell
 $git clone https://github.com/joong8812/deepbrain-my-server.git
 ```
-2. install pacakage which its use
+2. Install package which it uses
 ```shell
 $npm install
 ```
-3. run the server
+3. Run the server
 ```shell
 $node server
 ```
